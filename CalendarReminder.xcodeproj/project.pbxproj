@@ -10,7 +10,6 @@
 		494F9BA12A8E6A2A00648C0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494F9BA02A8E6A2A00648C0B /* AppDelegate.swift */; };
 		494F9BA32A8E6A2A00648C0B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494F9BA22A8E6A2A00648C0B /* SceneDelegate.swift */; };
 		494F9BA52A8E6A2A00648C0B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494F9BA42A8E6A2A00648C0B /* ViewController.swift */; };
-		494F9BA82A8E6A2A00648C0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 494F9BA62A8E6A2A00648C0B /* Main.storyboard */; };
 		494F9BAA2A8E6A3100648C0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 494F9BA92A8E6A3100648C0B /* Assets.xcassets */; };
 		494F9BAD2A8E6A3100648C0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 494F9BAB2A8E6A3100648C0B /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -20,7 +19,6 @@
 		494F9BA02A8E6A2A00648C0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		494F9BA22A8E6A2A00648C0B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		494F9BA42A8E6A2A00648C0B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		494F9BA72A8E6A2A00648C0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		494F9BA92A8E6A3100648C0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		494F9BAC2A8E6A3100648C0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		494F9BAE2A8E6A3100648C0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,15 +54,30 @@
 		494F9B9F2A8E6A2A00648C0B /* CalendarReminder */ = {
 			isa = PBXGroup;
 			children = (
-				494F9BA02A8E6A2A00648C0B /* AppDelegate.swift */,
-				494F9BA22A8E6A2A00648C0B /* SceneDelegate.swift */,
+				494F9BB82A8E6A8300648C0B /* Delegate */,
 				494F9BA42A8E6A2A00648C0B /* ViewController.swift */,
-				494F9BA62A8E6A2A00648C0B /* Main.storyboard */,
+				494F9BB62A8E6A5900648C0B /* Other */,
+			);
+			path = CalendarReminder;
+			sourceTree = "<group>";
+		};
+		494F9BB62A8E6A5900648C0B /* Other */ = {
+			isa = PBXGroup;
+			children = (
 				494F9BA92A8E6A3100648C0B /* Assets.xcassets */,
 				494F9BAB2A8E6A3100648C0B /* LaunchScreen.storyboard */,
 				494F9BAE2A8E6A3100648C0B /* Info.plist */,
 			);
-			path = CalendarReminder;
+			path = Other;
+			sourceTree = "<group>";
+		};
+		494F9BB82A8E6A8300648C0B /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				494F9BA02A8E6A2A00648C0B /* AppDelegate.swift */,
+				494F9BA22A8E6A2A00648C0B /* SceneDelegate.swift */,
+			);
+			path = Delegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +139,6 @@
 			files = (
 				494F9BAD2A8E6A3100648C0B /* LaunchScreen.storyboard in Resources */,
 				494F9BAA2A8E6A3100648C0B /* Assets.xcassets in Resources */,
-				494F9BA82A8E6A2A00648C0B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,14 +158,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		494F9BA62A8E6A2A00648C0B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				494F9BA72A8E6A2A00648C0B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		494F9BAB2A8E6A3100648C0B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -288,7 +292,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DP9VBDWN4S;
-				INFOPLIST_FILE = CalendarReminder/Info.plist;
+				INFOPLIST_FILE = CalendarReminder/Other/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,7 +311,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DP9VBDWN4S;
-				INFOPLIST_FILE = CalendarReminder/Info.plist;
+				INFOPLIST_FILE = CalendarReminder/Other/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
