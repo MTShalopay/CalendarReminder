@@ -9,19 +9,39 @@
 /* Begin PBXBuildFile section */
 		494F9BA12A8E6A2A00648C0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494F9BA02A8E6A2A00648C0B /* AppDelegate.swift */; };
 		494F9BA32A8E6A2A00648C0B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494F9BA22A8E6A2A00648C0B /* SceneDelegate.swift */; };
-		494F9BA52A8E6A2A00648C0B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494F9BA42A8E6A2A00648C0B /* ViewController.swift */; };
+		494F9BA52A8E6A2A00648C0B /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494F9BA42A8E6A2A00648C0B /* CalendarVC.swift */; };
 		494F9BAA2A8E6A3100648C0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 494F9BA92A8E6A3100648C0B /* Assets.xcassets */; };
 		494F9BAD2A8E6A3100648C0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 494F9BAB2A8E6A3100648C0B /* LaunchScreen.storyboard */; };
+		494F9BBD2A8E6BE700648C0B /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494F9BBC2A8E6BE700648C0B /* Helper.swift */; };
+		494F9BC12A8E6C8F00648C0B /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494F9BC02A8E6C8F00648C0B /* Extension+UIColor.swift */; };
+		494F9BC52A8E6D7A00648C0B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494F9BC42A8E6D7A00648C0B /* MainTabBarController.swift */; };
+		494F9BCA2A8E6E6800648C0B /* AddEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494F9BC92A8E6E6800648C0B /* AddEventVC.swift */; };
+		494F9BCD2A8E6E9000648C0B /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494F9BCC2A8E6E9000648C0B /* SettingVC.swift */; };
+		494F9BD12A8E7B1300648C0B /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494F9BD02A8E7B1300648C0B /* CalendarCell.swift */; };
+		494F9BD62A8E7F4000648C0B /* DayCalendarDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494F9BD52A8E7F4000648C0B /* DayCalendarDetailVC.swift */; };
+		494F9BDB2A8E8DC500648C0B /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494F9BDA2A8E8DC500648C0B /* Day.swift */; };
+		494F9BE02A8FCE2F00648C0B /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494F9BDF2A8FCE2F00648C0B /* EmptyView.swift */; };
+		494F9BE62A8FE18000648C0B /* NotesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494F9BE52A8FE18000648C0B /* NotesViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		494F9B9D2A8E6A2A00648C0B /* CalendarReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalendarReminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		494F9BA02A8E6A2A00648C0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		494F9BA22A8E6A2A00648C0B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		494F9BA42A8E6A2A00648C0B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		494F9BA42A8E6A2A00648C0B /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
 		494F9BA92A8E6A3100648C0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		494F9BAC2A8E6A3100648C0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		494F9BAE2A8E6A3100648C0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		494F9BBC2A8E6BE700648C0B /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		494F9BC02A8E6C8F00648C0B /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
+		494F9BC42A8E6D7A00648C0B /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		494F9BC92A8E6E6800648C0B /* AddEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventVC.swift; sourceTree = "<group>"; };
+		494F9BCC2A8E6E9000648C0B /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
+		494F9BD02A8E7B1300648C0B /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
+		494F9BD52A8E7F4000648C0B /* DayCalendarDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCalendarDetailVC.swift; sourceTree = "<group>"; };
+		494F9BDA2A8E8DC500648C0B /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
+		494F9BDF2A8FCE2F00648C0B /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		494F9BE52A8FE18000648C0B /* NotesViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,9 +74,14 @@
 		494F9B9F2A8E6A2A00648C0B /* CalendarReminder */ = {
 			isa = PBXGroup;
 			children = (
+				494F9BD92A8E8DAF00648C0B /* Model */,
+				494F9BCF2A8E7AE100648C0B /* Cell */,
 				494F9BB82A8E6A8300648C0B /* Delegate */,
-				494F9BA42A8E6A2A00648C0B /* ViewController.swift */,
+				494F9BC72A8E6E0F00648C0B /* ViewControllers */,
 				494F9BB62A8E6A5900648C0B /* Other */,
+				494F9BBC2A8E6BE700648C0B /* Helper.swift */,
+				494F9BBF2A8E6C7F00648C0B /* Extension */,
+				494F9BC42A8E6D7A00648C0B /* MainTabBarController.swift */,
 			);
 			path = CalendarReminder;
 			sourceTree = "<group>";
@@ -78,6 +103,75 @@
 				494F9BA22A8E6A2A00648C0B /* SceneDelegate.swift */,
 			);
 			path = Delegate;
+			sourceTree = "<group>";
+		};
+		494F9BBF2A8E6C7F00648C0B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				494F9BC02A8E6C8F00648C0B /* Extension+UIColor.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
+		494F9BC72A8E6E0F00648C0B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				49D7C2EE2A91246B00CED140 /* View */,
+				494F9BD42A8E7F1400648C0B /* Detail */,
+				494F9BA42A8E6A2A00648C0B /* CalendarVC.swift */,
+				494F9BC92A8E6E6800648C0B /* AddEventVC.swift */,
+				494F9BCC2A8E6E9000648C0B /* SettingVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		494F9BCF2A8E7AE100648C0B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				494F9BE42A8FE16000648C0B /* TableViewCell */,
+				494F9BE32A8FE14C00648C0B /* CollectionViewCell */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		494F9BD42A8E7F1400648C0B /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				494F9BD52A8E7F4000648C0B /* DayCalendarDetailVC.swift */,
+			);
+			name = Detail;
+			sourceTree = "<group>";
+		};
+		494F9BD92A8E8DAF00648C0B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				494F9BDA2A8E8DC500648C0B /* Day.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		494F9BE32A8FE14C00648C0B /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				494F9BD02A8E7B1300648C0B /* CalendarCell.swift */,
+			);
+			name = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		494F9BE42A8FE16000648C0B /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				494F9BE52A8FE18000648C0B /* NotesViewCell.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		49D7C2EE2A91246B00CED140 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				494F9BDF2A8FCE2F00648C0B /* EmptyView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,9 +243,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				494F9BA52A8E6A2A00648C0B /* ViewController.swift in Sources */,
+				494F9BA52A8E6A2A00648C0B /* CalendarVC.swift in Sources */,
+				494F9BCD2A8E6E9000648C0B /* SettingVC.swift in Sources */,
+				494F9BC12A8E6C8F00648C0B /* Extension+UIColor.swift in Sources */,
+				494F9BC52A8E6D7A00648C0B /* MainTabBarController.swift in Sources */,
+				494F9BE02A8FCE2F00648C0B /* EmptyView.swift in Sources */,
+				494F9BDB2A8E8DC500648C0B /* Day.swift in Sources */,
+				494F9BD12A8E7B1300648C0B /* CalendarCell.swift in Sources */,
+				494F9BCA2A8E6E6800648C0B /* AddEventVC.swift in Sources */,
+				494F9BD62A8E7F4000648C0B /* DayCalendarDetailVC.swift in Sources */,
 				494F9BA12A8E6A2A00648C0B /* AppDelegate.swift in Sources */,
 				494F9BA32A8E6A2A00648C0B /* SceneDelegate.swift in Sources */,
+				494F9BBD2A8E6BE700648C0B /* Helper.swift in Sources */,
+				494F9BE62A8FE18000648C0B /* NotesViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SettingVC.swift
 //  CalendarReminder
 //
 //  Created by Shalopay on 17.08.2023.
@@ -7,13 +7,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SettingVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        view.backgroundColor = Helper.Color.Label.textGreenColor
     }
-
-
 }
-
