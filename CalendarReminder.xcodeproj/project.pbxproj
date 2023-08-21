@@ -22,6 +22,7 @@
 		494F9BDB2A8E8DC500648C0B /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494F9BDA2A8E8DC500648C0B /* Day.swift */; };
 		494F9BE02A8FCE2F00648C0B /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494F9BDF2A8FCE2F00648C0B /* EmptyView.swift */; };
 		494F9BE62A8FE18000648C0B /* NotesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494F9BE52A8FE18000648C0B /* NotesViewCell.swift */; };
+		49D7C2F22A92F21000CED140 /* ThemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D7C2F12A92F21000CED140 /* ThemeCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		494F9BDA2A8E8DC500648C0B /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		494F9BDF2A8FCE2F00648C0B /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		494F9BE52A8FE18000648C0B /* NotesViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewCell.swift; sourceTree = "<group>"; };
+		49D7C2F12A92F21000CED140 /* ThemeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				494F9BD02A8E7B1300648C0B /* CalendarCell.swift */,
+				49D7C2F12A92F21000CED140 /* ThemeCell.swift */,
 			);
 			name = CollectionViewCell;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				494F9BA32A8E6A2A00648C0B /* SceneDelegate.swift in Sources */,
 				494F9BBD2A8E6BE700648C0B /* Helper.swift in Sources */,
 				494F9BE62A8FE18000648C0B /* NotesViewCell.swift in Sources */,
+				49D7C2F22A92F21000CED140 /* ThemeCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

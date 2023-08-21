@@ -41,7 +41,7 @@ class MainTabBarController: UITabBarController {
     
     private func setupView(){
         UITabBar.appearance().tintColor = Helper.Color.Label.textWhiteColor
-        tabBar.barTintColor = Helper.Color.ViewController.backGroundColorView
+        tabBar.barTintColor = Helper.Color.TabBar.textGreenDarkColor
         let dataSource: [TabBarItem] = [.calendar, .addEvent, .setting]
         self.viewControllers = dataSource.map {
             switch $0 {

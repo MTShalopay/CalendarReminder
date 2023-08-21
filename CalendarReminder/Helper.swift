@@ -19,11 +19,21 @@ class Helper {
         enum ViewController {
             static var backGroundColorView = UIColor(hexRGB: "#15244e") ?? UIColor()
             static var backGroundClear = UIColor.clear
+            enum Setting {
+                static var textGreenDarkColor = UIColor(hexRGB: "#556D5A") ?? UIColor()
+            }
         }
         enum Label {
             static var textOrangeColor = UIColor(hexRGB: "#F69707") ?? UIColor()
             static var textGreenColor = UIColor(hexRGB: "#02FF1A") ?? UIColor()
             static var textWhiteColor = UIColor(hexRGB: "#FFFFFF") ?? UIColor()
+            static var textBlackColor = UIColor(hexRGB: "#000000") ?? UIColor()
+            static var textGreenDarkColor = UIColor(hexRGB: "#556D5A") ?? UIColor()
+            static var textlightGreenColor = UIColor(hexRGB: "#415344") ?? UIColor()
+        }
+        enum TabBar {
+            static var textGreenDarkColor = UIColor(hexRGB: "#485C4C") ?? UIColor()
+            //let q  = UIColor(named: #colorLiteral(red: 0.2823529412, green: 0.3607843137, blue: 0.2980392157, alpha: 1))
         }
     }
 }
