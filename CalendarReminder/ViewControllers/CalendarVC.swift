@@ -111,7 +111,7 @@ extension CalendarVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLa
         cell.configureCell(day: day, color: Theme.currentTheme.cellViewContentBackgroundColor)
         if day.day == Helper.calendar.component(.day, from: date) {
             cell.contentView.backgroundColor = Theme.currentTheme.cellCurrentDateColor
-            cell.numberDateLabel.textColor = Theme.currentTheme.currentLabelColor
+            cell.numberDateLabel.textColor = Theme.currentTheme.cellText
         }
         return cell
     }
@@ -127,7 +127,7 @@ extension CalendarVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLa
         let insets = (collectionView.collectionViewLayout as? UICollectionViewFlowLayout)?.sectionInset ?? .zero
         let needed = collectionView.frame.width - (Helper.numberOfLine - 1) * spacing - insets.left - insets.right
         let itemwidth = floor(needed / Helper.numberOfLine)
-        Helper.cornerRadius = itemwidth / 2
+        Helper.itemWidth = itemwidth
         return CGSize(width: itemwidth, height: itemwidth)
     }
 }

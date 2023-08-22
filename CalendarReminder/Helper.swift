@@ -10,9 +10,10 @@ import UIKit
 class Helper {
     static let shared = Helper()
     static let numberOfLine: CGFloat = 5
-    static var cornerRadius: CGFloat = 0
+    static var itemWidth: CGFloat = 0
     static var heightTabBar: CGFloat = 0
     static let calendar = Calendar(identifier: .gregorian)
+    static var proportion: CGFloat = 10
     private init() {}
     
     enum Color {
