@@ -8,12 +8,14 @@
 import UIKit
 
 class Helper {
-    static let shared = Helper()
+    static var date = Date()
     static let numberOfLine: CGFloat = 5
     static var itemWidth: CGFloat = 0
     static var heightTabBar: CGFloat = 0
     static let calendar = Calendar(identifier: .gregorian)
     static var proportion: CGFloat = 10
+    
+    static let shared = Helper()
     private init() {}
     
     enum Color {

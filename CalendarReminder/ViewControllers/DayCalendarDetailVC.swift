@@ -8,7 +8,6 @@
 import UIKit
 
 class DayCalendarDetailVC: UIViewController {
-    var date = Date()
     var dateFormatter = DateFormatter()
     var selectedDay: Day
     
@@ -74,7 +73,7 @@ class DayCalendarDetailVC: UIViewController {
         super.viewWillAppear(animated)
         setupView()
         dateFormatter.dateFormat = "HH:mm"
-        dateLabel.attributedText = NSAttributedString(string: "\(selectedDay.weekday), \(dateFormatter.string(from: date))")
+        dateLabel.attributedText = NSAttributedString(string: "\(selectedDay.weekday), \(dateFormatter.string(from: Helper.date))")
     }
     
     private func setupView() {

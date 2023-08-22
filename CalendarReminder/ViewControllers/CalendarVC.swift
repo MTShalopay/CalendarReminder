@@ -9,7 +9,6 @@ import UIKit
 
 class CalendarVC: UIViewController {
     let dateFormatter = DateFormatter()
-    let date = Date()
     var monthDays = [Day]()
     
     private lazy var dateLabel: UILabel = {
@@ -48,10 +47,10 @@ class CalendarVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         dateFormatter.dateFormat = "EEEE, HH:mm"
-        dateLabel.attributedText = NSAttributedString(string: "\(dateFormatter.string(from: date))")
+        dateLabel.attributedText = NSAttributedString(string: "\(dateFormatter.string(from: Helper.date))")
         tabBarController?.tabBar.isHidden = false
         setupView()
-        monthDays = getDaysOfMonth(for: date)
+        monthDays = getDaysOfMonth(for: Helper.date)
         collectionView.reloadData()
     }
     
@@ -65,7 +64,7 @@ class CalendarVC: UIViewController {
         navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: Theme.currentTheme.labelTextColor]
         
         dateFormatter.dateFormat = "dd MMMM"
-        self.navigationItem.title = "\(dateFormatter.string(from: date))"
+        self.navigationItem.title = "\(dateFormatter.string(from: Helper.date))"
         
         view.addSubview(dateLabel)
         view.addSubview(collectionView)
@@ -109,7 +108,7 @@ extension CalendarVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLa
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CalendarCell.identifier, for: indexPath) as? CalendarCell else { return UICollectionViewCell(frame: .zero)}
         let day = monthDays[indexPath.row]
         cell.configureCell(day: day, color: Theme.currentTheme.cellViewContentBackgroundColor)
-        if day.day == Helper.calendar.component(.day, from: date) {
+        if day.day == Helper.calendar.component(.day, from: Helper.date) {
             cell.contentView.backgroundColor = Theme.currentTheme.cellCurrentDateColor
             cell.numberDateLabel.textColor = Theme.currentTheme.cellText
         }

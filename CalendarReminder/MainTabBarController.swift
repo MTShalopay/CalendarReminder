@@ -40,7 +40,8 @@ class MainTabBarController: UITabBarController {
     }
     
     private func setupView(){
-        UITabBar.appearance().tintColor = Theme.currentTheme.cellCurrentDateColor
+        tabBar.tintColor = Theme.currentTheme.cellCurrentDateColor
+        tabBar.unselectedItemTintColor = Theme.currentTheme.labelTextColor
         tabBar.barTintColor = Theme.currentTheme.tabBarControllerBackGroundColor
         let dataSource: [TabBarItem] = [.calendar, .addEvent, .setting]
         self.viewControllers = dataSource.map {
