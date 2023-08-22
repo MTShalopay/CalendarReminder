@@ -40,20 +40,20 @@ class MainTabBarController: UITabBarController {
     }
     
     private func setupView(){
-        UITabBar.appearance().tintColor = Helper.Color.Label.textWhiteColor
-        tabBar.barTintColor = Helper.Color.TabBar.textGreenDarkColor
+        UITabBar.appearance().tintColor = Theme.currentTheme.cellCurrentDateColor
+        tabBar.barTintColor = Theme.currentTheme.tabBarControllerBackGroundColor
         let dataSource: [TabBarItem] = [.calendar, .addEvent, .setting]
         self.viewControllers = dataSource.map {
             switch $0 {
             case .calendar:
                 let calendarVC = CalendarVC()
-                return self.wrappedInNavigationController(with: calendarVC, title: $0.title)
+                return self.wrappedInNavigationController(with: calendarVC, title: $0.title, tag: 0)
             case .addEvent:
                 let addEventVC = AddEventVC()
-                return self.wrappedInNavigationController(with: addEventVC, title: $0.title)
+                return self.wrappedInNavigationController(with: addEventVC, title: $0.title, tag: 1)
             case .setting:
                 let settingVC = SettingVC()
-                return self.wrappedInNavigationController(with: settingVC, title: $0.title)
+                return self.wrappedInNavigationController(with: settingVC, title: $0.title, tag: 2)
             }
         }
         self.viewControllers?.enumerated().forEach {
@@ -63,7 +63,7 @@ class MainTabBarController: UITabBarController {
         }
     }
     
-    private func wrappedInNavigationController(with: UIViewController, title: Any?) -> UINavigationController {
+    private func wrappedInNavigationController(with: UIViewController, title: Any?, tag: Int) -> UINavigationController {
             return UINavigationController(rootViewController: with)
     }
 }

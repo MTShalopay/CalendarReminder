@@ -16,9 +16,9 @@ class NotesViewCell: UITableViewCell {
     public lazy var timerButton: UIButton = {
         let button = UIButton(type: .system)
         if let myImage = UIImage(systemName: "clock", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20, weight: .bold, scale: .large)) { button.setImage(myImage.withRenderingMode(.alwaysTemplate), for: .normal)
-            button.tintColor = Helper.Color.Label.textBlackColor
+            button.tintColor = Theme.currentTheme.labelTextColor
             button.contentEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-            button.backgroundColor = Helper.Color.Label.textlightGreenColor
+            button.backgroundColor = Theme.currentTheme.cellViewContentBackgroundColor
             button.clipsToBounds = true
             button.layer.cornerRadius = 25
             button.addTarget(self, action: #selector(enteredTime), for: .touchUpInside)
@@ -30,7 +30,7 @@ class NotesViewCell: UITableViewCell {
         let pickerView = UIPickerView()
         pickerView.dataSource = self
         pickerView.delegate = self
-        pickerView.backgroundColor = Helper.Color.Label.textBlackColor
+        pickerView.backgroundColor = Theme.currentTheme.labelTextColor
         pickerView.sizeToFit()
         return pickerView
     }()
@@ -41,7 +41,7 @@ class NotesViewCell: UITableViewCell {
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         toolBar.setItems([leftButton, spaceButton], animated: true)
         toolBar.clipsToBounds = true
-        toolBar.backgroundColor = Helper.Color.ViewController.backGroundClear
+        toolBar.backgroundColor = Helper.Color.TabBar.backGroundClear
         toolBar.setBackgroundImage(UIImage(), forToolbarPosition: .any, barMetrics: .default)
         toolBar.sizeToFit()
         return toolBar
@@ -50,14 +50,14 @@ class NotesViewCell: UITableViewCell {
     private lazy var checkButton: UIButton = {
         let button = UIButton(type: .system)
         if let myImage = UIImage(systemName: "circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20, weight: .bold, scale: .large)) { button.setImage(myImage.withRenderingMode(.alwaysTemplate), for: .normal) }
-        button.tintColor = Helper.Color.Label.textBlackColor
+        button.tintColor = Theme.currentTheme.labelTextColor
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
     public lazy var nameNotesTF: UITextField = {
         let textField = UITextField()
-        textField.textColor = Helper.Color.Label.textBlackColor
+        textField.textColor = Theme.currentTheme.labelTextColor
         textField.font = UIFont.systemFont(ofSize: 17)
         textField.delegate = self
         textField.inputAccessoryView = toolBar
@@ -83,11 +83,11 @@ class NotesViewCell: UITableViewCell {
         //nameNotesLabel.attributedText = NSAttributedString(string: note.text, attributes: [NSAttributedString.Key.foregroundColor : Helper.Color.Label.textBlackColor, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20)])
         nameNotesTF.attributedText = NSAttributedString(string: note.text)
         nameNotesTF.tag = tag
-        dateNotesLabel.attributedText = NSAttributedString(string: "", attributes: [NSAttributedString.Key.foregroundColor : Helper.Color.Label.textBlackColor, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13)])
+        dateNotesLabel.attributedText = NSAttributedString(string: "", attributes: [NSAttributedString.Key.foregroundColor : Theme.currentTheme.labelTextColor, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13)])
     }
     
     private func setupView() {
-        contentView.backgroundColor = Helper.Color.Label.textGreenDarkColor
+        contentView.backgroundColor = Theme.currentTheme.viewControllerBackgroundColor
         contentView.addSubview(checkButton)
         contentView.addSubview(nameNotesTF)
         contentView.addSubview(dateNotesLabel)
@@ -132,10 +132,39 @@ class NotesViewCell: UITableViewCell {
       }
     
     @objc private func enteredTime(sender: UIButton) {
-        print(#function)
         nameNotesTF.resignFirstResponder()
         nameNotesTF.inputView = pickerView
+        let cancel = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelButtonItem))
+        let done = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonItem))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let titleLabel = UILabel()
+        titleLabel.text = "Time"
+        titleLabel.textColor = Theme.currentTheme.cellCurrentDateColor
+        titleLabel.font = UIFont.systemFont(ofSize: 17)
+        let customView = UIBarButtonItem(customView: titleLabel)
+        toolBar.backgroundColor = Theme.currentTheme.labelTextColor
+        toolBar.setItems([cancel, spaceButton, customView, spaceButton, done], animated: true)
         nameNotesTF.becomeFirstResponder()
+    }
+    
+    @objc private func cancelButtonItem() {
+        print(#function)
+        setupNewToolBar()
+    }
+    
+    @objc private func doneButtonItem() {
+        print(#function)
+        setupNewToolBar()
+    }
+    
+    private func setupNewToolBar() {
+        nameNotesTF.resignFirstResponder()
+        nameNotesTF.inputView = nil
+        let leftButton = UIBarButtonItem(customView: timerButton)
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        toolBar.setItems([leftButton, spaceButton], animated: true)
+        toolBar.backgroundColor = Helper.Color.TabBar.backGroundClear
+        toolBar.setBackgroundImage(UIImage(), forToolbarPosition: .any, barMetrics: .default)
     }
     
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
@@ -173,11 +202,11 @@ extension NotesViewCell: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         switch component {
         case 0:
-            return NSAttributedString(string: getTimeString(from: startTimes[row]), attributes: [NSAttributedString.Key.foregroundColor : Helper.Color.Label.textWhiteColor])
+            return NSAttributedString(string: getTimeString(from: startTimes[row]), attributes: [NSAttributedString.Key.foregroundColor : Theme.currentTheme.cellCurrentDateColor])
         case 1:
-            return NSAttributedString(string: "to", attributes: [NSAttributedString.Key.foregroundColor : Helper.Color.Label.textWhiteColor])
+            return NSAttributedString(string: "to", attributes: [NSAttributedString.Key.foregroundColor : Theme.currentTheme.cellCurrentDateColor])
         case 2:
-            return NSAttributedString(string: getTimeString(from: endTimes[row]), attributes: [NSAttributedString.Key.foregroundColor : Helper.Color.Label.textWhiteColor])
+            return NSAttributedString(string: getTimeString(from: endTimes[row]), attributes: [NSAttributedString.Key.foregroundColor : Theme.currentTheme.cellCurrentDateColor])
         default:
             return nil
         }

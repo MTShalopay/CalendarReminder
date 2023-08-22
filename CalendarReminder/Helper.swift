@@ -16,24 +16,54 @@ class Helper {
     private init() {}
     
     enum Color {
-        enum ViewController {
-            static var backGroundColorView = UIColor(hexRGB: "#15244e") ?? UIColor()
-            static var backGroundClear = UIColor.clear
-            enum Setting {
-                static var textGreenDarkColor = UIColor(hexRGB: "#556D5A") ?? UIColor()
+        enum ColorTheme {
+            static var Theme1 = UIColor(hexRGB: "#556D5A") ?? UIColor()
+            static var Theme2 = UIColor(hexRGB: "#A2A09C") ?? UIColor()
+            static var Theme3 = UIColor(hexRGB: "#9D8570") ?? UIColor()
+            static var Theme4 = UIColor(hexRGB: "#484A4E") ?? UIColor()
+            enum ColorTheme1 {
+                static var viewControllerBackgroundColor = UIColor(hexRGB: "#556D5A") ?? UIColor()
+                static var tabBarControllerBackGroundColor = UIColor(hexRGB: "#485C4C") ?? UIColor()
+                static var labelTextColor = UIColor(hexRGB: "#000000") ?? UIColor()
+                static var cellViewContentBackgroundColor = UIColor(hexRGB: "#485C4C") ?? UIColor()
+                static var cellText = UIColor(hexRGB: "#000000") ?? UIColor()
+                static var currentLabelColor = UIColor(hexRGB: "#000000") ?? UIColor()
+                static var cellCurrentDateColor = UIColor(hexRGB: "#FFFFFF") ?? UIColor()
+            }
+            
+            enum ColorTheme2 {
+                static var viewControllerBackgroundColor = UIColor(hexRGB: "#A2A09C") ?? UIColor()
+                static var tabBarControllerBackGroundColor = UIColor(hexRGB: "#888683") ?? UIColor()
+                static var labelTextColor = UIColor(hexRGB: "#000000") ?? UIColor()
+                static var cellViewContentBackgroundColor = UIColor(hexRGB: "#888683") ?? UIColor()
+                static var cellText = UIColor(hexRGB: "#000000") ?? UIColor()
+                static var currentLabelColor = UIColor(hexRGB: "#000000") ?? UIColor()
+                static var cellCurrentDateColor = UIColor(hexRGB: "#FFFFFF") ?? UIColor()
+            }
+            
+            enum ColorTheme3 {
+                static var viewControllerBackgroundColor = UIColor(hexRGB: "#9D8570") ?? UIColor()
+                static var tabBarControllerBackGroundColor = UIColor(hexRGB: "#84705E") ?? UIColor()
+                static var labelTextColor = UIColor(hexRGB: "#000000") ?? UIColor()
+                static var cellViewContentBackgroundColor = UIColor(hexRGB: "#84705E") ?? UIColor()
+                static var cellText = UIColor(hexRGB: "#000000") ?? UIColor()
+                static var currentLabelColor = UIColor(hexRGB: "#000000") ?? UIColor()
+                static var cellCurrentDateColor = UIColor(hexRGB: "#FFFFFF") ?? UIColor()
+            }
+            
+            enum ColorTheme4 {
+                static var viewControllerBackgroundColor = UIColor(hexRGB: "#484A4E") ?? UIColor()
+                static var tabBarControllerBackGroundColor = UIColor(hexRGB: "#3C3E42") ?? UIColor()
+                static var labelTextColor = UIColor(hexRGB: "#000000") ?? UIColor()
+                static var cellViewContentBackgroundColor = UIColor(hexRGB: "#3C3E42") ?? UIColor()
+                static var cellText = UIColor(hexRGB: "#000000") ?? UIColor()
+                static var currentLabelColor = UIColor(hexRGB: "#000000") ?? UIColor()
+                static var cellCurrentDateColor = UIColor(hexRGB: "#FFFFFF") ?? UIColor()
             }
         }
-        enum Label {
-            static var textOrangeColor = UIColor(hexRGB: "#F69707") ?? UIColor()
-            static var textGreenColor = UIColor(hexRGB: "#02FF1A") ?? UIColor()
-            static var textWhiteColor = UIColor(hexRGB: "#FFFFFF") ?? UIColor()
-            static var textBlackColor = UIColor(hexRGB: "#000000") ?? UIColor()
-            static var textGreenDarkColor = UIColor(hexRGB: "#556D5A") ?? UIColor()
-            static var textlightGreenColor = UIColor(hexRGB: "#415344") ?? UIColor()
-        }
         enum TabBar {
-            static var textGreenDarkColor = UIColor(hexRGB: "#485C4C") ?? UIColor()
-            //let q  = UIColor(named: #colorLiteral(red: 0.2823529412, green: 0.3607843137, blue: 0.2980392157, alpha: 1))
+            static var backGroundClear = UIColor.clear
+            //let q  = UIColor(named: #colorLiteral(red: 0.2352941176, green: 0.2431372549, blue: 0.2588235294, alpha: 1))
         }
     }
 }

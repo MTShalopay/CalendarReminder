@@ -23,6 +23,8 @@
 		494F9BE02A8FCE2F00648C0B /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494F9BDF2A8FCE2F00648C0B /* EmptyView.swift */; };
 		494F9BE62A8FE18000648C0B /* NotesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494F9BE52A8FE18000648C0B /* NotesViewCell.swift */; };
 		49D7C2F22A92F21000CED140 /* ThemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D7C2F12A92F21000CED140 /* ThemeCell.swift */; };
+		49D7C2F62A93714500CED140 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D7C2F52A93714500CED140 /* Theme.swift */; };
+		49D7C2F92A9371D800CED140 /* CurrentTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D7C2F82A9371D800CED140 /* CurrentTheme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		494F9BDF2A8FCE2F00648C0B /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		494F9BE52A8FE18000648C0B /* NotesViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewCell.swift; sourceTree = "<group>"; };
 		49D7C2F12A92F21000CED140 /* ThemeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCell.swift; sourceTree = "<group>"; };
+		49D7C2F52A93714500CED140 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		49D7C2F82A9371D800CED140 /* CurrentTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTheme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,7 @@
 		494F9B9F2A8E6A2A00648C0B /* CalendarReminder */ = {
 			isa = PBXGroup;
 			children = (
+				49D7C2F42A93712C00CED140 /* Theme */,
 				494F9BD92A8E8DAF00648C0B /* Model */,
 				494F9BCF2A8E7AE100648C0B /* Cell */,
 				494F9BB82A8E6A8300648C0B /* Delegate */,
@@ -177,6 +182,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		49D7C2F42A93712C00CED140 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				49D7C2F52A93714500CED140 /* Theme.swift */,
+				49D7C2F82A9371D800CED140 /* CurrentTheme.swift */,
+			);
+			name = Theme;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -249,6 +263,7 @@
 				494F9BA52A8E6A2A00648C0B /* CalendarVC.swift in Sources */,
 				494F9BCD2A8E6E9000648C0B /* SettingVC.swift in Sources */,
 				494F9BC12A8E6C8F00648C0B /* Extension+UIColor.swift in Sources */,
+				49D7C2F92A9371D800CED140 /* CurrentTheme.swift in Sources */,
 				494F9BC52A8E6D7A00648C0B /* MainTabBarController.swift in Sources */,
 				494F9BE02A8FCE2F00648C0B /* EmptyView.swift in Sources */,
 				494F9BDB2A8E8DC500648C0B /* Day.swift in Sources */,
@@ -258,6 +273,7 @@
 				494F9BA12A8E6A2A00648C0B /* AppDelegate.swift in Sources */,
 				494F9BA32A8E6A2A00648C0B /* SceneDelegate.swift in Sources */,
 				494F9BBD2A8E6BE700648C0B /* Helper.swift in Sources */,
+				49D7C2F62A93714500CED140 /* Theme.swift in Sources */,
 				494F9BE62A8FE18000648C0B /* NotesViewCell.swift in Sources */,
 				49D7C2F22A92F21000CED140 /* ThemeCell.swift in Sources */,
 			);

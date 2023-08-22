@@ -13,7 +13,7 @@ class CalendarCell: UICollectionViewCell {
     public lazy var numberDateLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 19)
-        label.textColor = Helper.Color.Label.textWhiteColor
+        label.textColor = Theme.currentTheme.currentLabelColor
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -23,12 +23,12 @@ class CalendarCell: UICollectionViewCell {
         super.init(frame: frame)
         setupView()
     }
-    public func configureCell(day: Day) {
+    public func configureCell(day: Day, color: UIColor) {
         numberDateLabel.attributedText = NSAttributedString(string: "\(day.day)")
+        contentView.backgroundColor = Theme.currentTheme.cellViewContentBackgroundColor
     }
     
     private func setupView() {
-        contentView.backgroundColor = Helper.Color.Label.textlightGreenColor
         contentView.layer.cornerRadius = Helper.cornerRadius
         contentView.addSubview(numberDateLabel)
         NSLayoutConstraint.activate([

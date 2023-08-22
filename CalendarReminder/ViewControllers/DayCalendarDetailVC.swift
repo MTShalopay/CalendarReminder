@@ -17,7 +17,7 @@ class DayCalendarDetailVC: UIViewController {
     private lazy var dateLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 22)
-        label.textColor = Helper.Color.Label.textBlackColor
+        label.textColor = Theme.currentTheme.labelTextColor
         label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -25,7 +25,7 @@ class DayCalendarDetailVC: UIViewController {
     
     private lazy var tabbarView: UIView = {
         let view = UIView()
-        view.backgroundColor = Helper.Color.TabBar.textGreenDarkColor
+        view.backgroundColor = Theme.currentTheme.tabBarControllerBackGroundColor
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -33,7 +33,7 @@ class DayCalendarDetailVC: UIViewController {
     private lazy var addEvents: UIButton = {
         let button = UIButton(type: .system)
         if let myImage = UIImage(systemName: "plus.circle.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20, weight: .bold, scale: .large)) { button.setImage(myImage.withRenderingMode(.alwaysTemplate), for: .normal) }
-        button.tintColor = Helper.Color.Label.textWhiteColor
+        button.tintColor = Theme.currentTheme.cellCurrentDateColor
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(addEvent), for: .touchUpInside)
         return button
@@ -48,9 +48,9 @@ class DayCalendarDetailVC: UIViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "default")
         tableView.register(NotesViewCell.self, forCellReuseIdentifier: NotesViewCell.identifier)
-        tableView.backgroundColor = Helper.Color.Label.textGreenDarkColor
+        tableView.backgroundColor = Theme.currentTheme.viewControllerBackgroundColor
         let bgView = UIView()
-        bgView.backgroundColor = Helper.Color.Label.textGreenDarkColor
+        bgView.backgroundColor = Theme.currentTheme.viewControllerBackgroundColor
         tableView.backgroundView = bgView
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
@@ -78,14 +78,15 @@ class DayCalendarDetailVC: UIViewController {
     }
     
     private func setupView() {
-        view.backgroundColor = Helper.Color.Label.textGreenDarkColor
-        navigationController?.navigationBar.barTintColor = Helper.Color.Label.textGreenDarkColor
+        tapingEmptyView()
+        view.backgroundColor = Theme.currentTheme.viewControllerBackgroundColor
+        navigationController?.navigationBar.barTintColor = Theme.currentTheme.viewControllerBackgroundColor
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Helper.Color.Label.textBlackColor]
-        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: Helper.Color.Label.textBlackColor]
-        self.navigationItem.title = "\(selectedDay.day) \(selectedDay.month.uppercased())"
-        navigationController?.navigationBar.tintColor = Helper.Color.Label.textBlackColor
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Theme.currentTheme.labelTextColor]
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: Theme.currentTheme.labelTextColor]
+        self.navigationItem.title = "\(selectedDay.day) \(selectedDay.month)"
+        navigationController?.navigationBar.tintColor = Theme.currentTheme.labelTextColor
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "Calendar", style: .plain, target: nil, action: nil)
         view.addSubview(notesTableView)
         view.addSubview(emptyView)
@@ -116,6 +117,11 @@ class DayCalendarDetailVC: UIViewController {
             addEvents.trailingAnchor.constraint(equalTo: tabbarView.trailingAnchor, constant: -15),
             addEvents.topAnchor.constraint(equalTo: tabbarView.topAnchor, constant: 10),
         ])
+    }
+    
+    private func tapingEmptyView() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(addEvent))
+        emptyView.addGestureRecognizer(tap)
     }
     
     @objc private func addEvent() {

@@ -11,6 +11,6 @@ class AddEventVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = Helper.Color.Label.textOrangeColor
+        view.backgroundColor = Theme.currentTheme.viewControllerBackgroundColor
     }
 }

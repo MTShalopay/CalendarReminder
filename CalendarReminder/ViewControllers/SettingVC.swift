@@ -13,7 +13,7 @@ class SettingVC: UIViewController {
        let label = UILabel()
         label.attributedText = NSAttributedString(string: "THEME")
         label.font = UIFont.systemFont(ofSize: 20)
-        label.textColor = Helper.Color.Label.textWhiteColor
+        label.textColor = Theme.currentTheme.cellCurrentDateColor
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -45,12 +45,13 @@ class SettingVC: UIViewController {
     
     private func setupView() {
         title = "Settings"
-        view.backgroundColor = Helper.Color.ViewController.Setting.textGreenDarkColor
-        navigationController?.navigationBar.barTintColor = Helper.Color.Label.textGreenDarkColor
+//        tabBarController?.tabBar.barTintColor = Theme.currentTheme.viewControllerBackgroundColor
+        view.backgroundColor = Theme.currentTheme.viewControllerBackgroundColor
+        navigationController?.navigationBar.barTintColor = Theme.currentTheme.viewControllerBackgroundColor
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Helper.Color.Label.textWhiteColor]
-        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: Helper.Color.Label.textWhiteColor]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Theme.currentTheme.cellCurrentDateColor]
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: Theme.currentTheme.cellCurrentDateColor]
         view.addSubview(themecollectionView)
         view.addSubview(titLabel)
         NSLayoutConstraint.activate([
@@ -68,15 +69,37 @@ class SettingVC: UIViewController {
 
 extension SettingVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return Theme.ColorTheme.allCases.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ThemeCell.identifier, for: indexPath) as? ThemeCell else { return UICollectionViewCell(frame: .zero)}
+        let colorTheme = Theme.ColorTheme.allCases[indexPath.row].colorView
+        cell.configureCell(color: colorTheme)
         return cell
     }
         
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("IndexPathSection: \(indexPath.section) - IndexPathItem: \(indexPath.item)")
+        guard let cell = collectionView.cellForItem(at: indexPath) as? ThemeCell else {return}
+        switch indexPath.item {
+        case 0:
+            Theme.currentTheme = Theme.ThemeType.theme1.type
+        case 1:
+            Theme.currentTheme = Theme.ThemeType.theme2.type
+        case 2:
+            Theme.currentTheme = Theme.ThemeType.theme3.type
+        case 3:
+            Theme.currentTheme = Theme.ThemeType.theme4.type
+        default:
+            return Theme.currentTheme = Theme.ThemeType.theme1.type
+        }
+        cell.widthView.isHidden = false
+        view.backgroundColor = Theme.currentTheme.tabBarControllerBackGroundColor
+        tabBarController?.tabBar.barTintColor = Theme.currentTheme.viewControllerBackgroundColor
+    }
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? ThemeCell else {return}
+        cell.widthView.isHidden = true
     }
 }

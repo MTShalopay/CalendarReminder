@@ -11,7 +11,7 @@ class EmptyView: UIView {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.attributedText = NSAttributedString(string: "Set a reminder for today", attributes: [NSAttributedString.Key.foregroundColor : Helper.Color.Label.textBlackColor, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 25)])
+        label.attributedText = NSAttributedString(string: "Set a reminder for today", attributes: [NSAttributedString.Key.foregroundColor : Theme.currentTheme.labelTextColor, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 25)])
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -23,7 +23,7 @@ class EmptyView: UIView {
     
     private func setupView() {
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = Helper.Color.Label.textGreenDarkColor
+        backgroundColor = Theme.currentTheme.viewControllerBackgroundColor
         addSubview(titleLabel)
         NSLayoutConstraint.activate([
             titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor),

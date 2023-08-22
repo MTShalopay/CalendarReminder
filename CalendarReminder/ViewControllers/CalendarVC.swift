@@ -15,7 +15,7 @@ class CalendarVC: UIViewController {
     private lazy var dateLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 22)
-        label.textColor = Helper.Color.Label.textBlackColor
+        label.textColor = Theme.currentTheme.labelTextColor
         label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -29,13 +29,13 @@ class CalendarVC: UIViewController {
         return layout
     }()
     
-    private lazy var collectionView: UICollectionView = {
+    public lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(CalendarCell.self, forCellWithReuseIdentifier: CalendarCell.identifier)
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "defaultcell")
-        collectionView.backgroundColor = .clear
+        collectionView.backgroundColor = Helper.Color.TabBar.backGroundClear
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
     }()
@@ -52,18 +52,20 @@ class CalendarVC: UIViewController {
         tabBarController?.tabBar.isHidden = false
         setupView()
         monthDays = getDaysOfMonth(for: date)
+        collectionView.reloadData()
     }
     
     private func setupView() {
-        view.backgroundColor = Helper.Color.Label.textGreenDarkColor
-        navigationController?.navigationBar.barTintColor = Helper.Color.Label.textGreenDarkColor
+        tabBarController?.tabBar.barTintColor = Theme.currentTheme.tabBarControllerBackGroundColor
+        view.backgroundColor = Theme.currentTheme.viewControllerBackgroundColor
+        navigationController?.navigationBar.barTintColor = Theme.currentTheme.viewControllerBackgroundColor
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Helper.Color.Label.textBlackColor]
-        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: Helper.Color.Label.textBlackColor]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Theme.currentTheme.labelTextColor]
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: Theme.currentTheme.labelTextColor]
         
         dateFormatter.dateFormat = "dd MMMM"
-        self.navigationItem.title = "\(dateFormatter.string(from: date).uppercased())"
+        self.navigationItem.title = "\(dateFormatter.string(from: date))"
         
         view.addSubview(dateLabel)
         view.addSubview(collectionView)
@@ -106,10 +108,10 @@ extension CalendarVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLa
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CalendarCell.identifier, for: indexPath) as? CalendarCell else { return UICollectionViewCell(frame: .zero)}
         let day = monthDays[indexPath.row]
-        cell.configureCell(day: day)
+        cell.configureCell(day: day, color: Theme.currentTheme.cellViewContentBackgroundColor)
         if day.day == Helper.calendar.component(.day, from: date) {
-            cell.contentView.backgroundColor = Helper.Color.Label.textWhiteColor
-            cell.numberDateLabel.textColor = Helper.Color.Label.textBlackColor
+            cell.contentView.backgroundColor = Theme.currentTheme.cellCurrentDateColor
+            cell.numberDateLabel.textColor = Theme.currentTheme.currentLabelColor
         }
         return cell
     }
