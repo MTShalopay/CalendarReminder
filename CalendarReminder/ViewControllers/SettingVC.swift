@@ -98,6 +98,7 @@ extension SettingVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLay
         view.backgroundColor = Theme.currentTheme.tabBarControllerBackGroundColor
         tabBarController?.tabBar.barTintColor = Theme.currentTheme.viewControllerBackgroundColor
     }
+    
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath) as? ThemeCell else {return}
         cell.widthView.isHidden = true

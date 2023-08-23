@@ -110,7 +110,7 @@ extension CalendarVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLa
         cell.configureCell(day: day, color: Theme.currentTheme.cellViewContentBackgroundColor)
         if day.day == Helper.calendar.component(.day, from: Helper.date) {
             cell.contentView.backgroundColor = Theme.currentTheme.cellCurrentDateColor
-            cell.numberDateLabel.textColor = Theme.currentTheme.cellText
+            cell.numberDateLabel.attributedText = NSAttributedString(string: "\(day.day)", attributes: [NSAttributedString.Key.foregroundColor: Theme.currentTheme.cellText])
         }
         return cell
     }
