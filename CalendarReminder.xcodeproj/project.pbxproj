@@ -25,6 +25,7 @@
 		49D7C2F22A92F21000CED140 /* ThemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D7C2F12A92F21000CED140 /* ThemeCell.swift */; };
 		49D7C2F62A93714500CED140 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D7C2F52A93714500CED140 /* Theme.swift */; };
 		49D7C2F92A9371D800CED140 /* CurrentTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D7C2F82A9371D800CED140 /* CurrentTheme.swift */; };
+		49D7C3012A9547A300CED140 /* WaveUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D7C3002A9547A200CED140 /* WaveUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		49D7C2F12A92F21000CED140 /* ThemeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCell.swift; sourceTree = "<group>"; };
 		49D7C2F52A93714500CED140 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		49D7C2F82A9371D800CED140 /* CurrentTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTheme.swift; sourceTree = "<group>"; };
+		49D7C3002A9547A200CED140 /* WaveUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				494F9BBC2A8E6BE700648C0B /* Helper.swift */,
 				494F9BBF2A8E6C7F00648C0B /* Extension */,
 				494F9BC42A8E6D7A00648C0B /* MainTabBarController.swift */,
+				49D7C3002A9547A200CED140 /* WaveUIView.swift */,
 			);
 			path = CalendarReminder;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 			files = (
 				494F9BA52A8E6A2A00648C0B /* CalendarVC.swift in Sources */,
 				494F9BCD2A8E6E9000648C0B /* SettingVC.swift in Sources */,
+				49D7C3012A9547A300CED140 /* WaveUIView.swift in Sources */,
 				494F9BC12A8E6C8F00648C0B /* Extension+UIColor.swift in Sources */,
 				49D7C2F92A9371D800CED140 /* CurrentTheme.swift in Sources */,
 				494F9BC52A8E6D7A00648C0B /* MainTabBarController.swift in Sources */,

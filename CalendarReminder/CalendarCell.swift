@@ -6,14 +6,26 @@
 //
 
 import UIKit
+import SwiftUI
 
 class CalendarCell: UICollectionViewCell {
     static let identifier = "CalendarCell"
+    var waveUIView = WaveUIView(percent: 40.0)
     
-    let startAngle = -CGFloat.pi / 2
-    let centre = CGPoint (x: Helper.itemWidth / 2, y: Helper.itemWidth / 2)
-    let radius = Helper.itemWidth / 2
-    
+    private lazy var roundView: UIView = {
+        let view = UIView()
+        var controller = UIHostingController(rootView: waveUIView)
+        controller.view.layer.cornerRadius = Helper.itemWidth / 2
+        controller.view.backgroundColor = .clear
+        controller.view.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(controller.view)
+        controller.view.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        controller.view.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        controller.view.heightAnchor.constraint(equalToConstant: Helper.itemWidth).isActive = true
+        controller.view.widthAnchor.constraint(equalToConstant: Helper.itemWidth).isActive = true
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     public lazy var numberDateLabel: UILabel = {
         let label = UILabel()
@@ -24,38 +36,11 @@ class CalendarCell: UICollectionViewCell {
         return label
     }()
     
-    private lazy var roundView: UIView = {
-        let roundView = UIView()
-        roundView.layer.cornerRadius = Helper.itemWidth / 2
-        let arc = CGFloat.pi * 2 * Helper.proportion / 100
-        let cPath = UIBezierPath()
-        cPath.move(to: centre)
-        cPath.addLine(to: CGPoint(x: centre.x + radius * cos(startAngle), y: centre.y + radius * sin(startAngle)))
-        cPath.addArc(withCenter: centre, radius: radius, startAngle: startAngle, endAngle: arc + startAngle, clockwise: true)
-        cPath.addLine(to: CGPoint(x: centre.x, y: centre.y))
-        let circleShape = CAShapeLayer()
-        circleShape.path = cPath.cgPath
-        circleShape.strokeColor = Theme.currentTheme.labelTextColor.cgColor
-        circleShape.fillColor = Theme.currentTheme.labelTextColor.cgColor
-        if arc == 0 {
-            circleShape.lineWidth = 0
-        } else {
-            circleShape.lineWidth = 1.5
-        }
-        roundView.layer.addSublayer(circleShape)
-        roundView.translatesAutoresizingMaskIntoConstraints = false
-        return roundView
-    }()
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
-        
-        
-        
-        
-        
     }
+    
     public func configureCell(day: Day, color: UIColor) {
         numberDateLabel.attributedText = NSAttributedString(string: "\(day.day)")
         contentView.backgroundColor = Theme.currentTheme.cellViewContentBackgroundColor
